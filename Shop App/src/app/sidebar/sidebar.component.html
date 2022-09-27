@@ -1,0 +1,26 @@
+<!-- FIRST CHILD OF SIDEBAR NAVIGATION  -->
+<ul class="side-nav">
+  <li
+    class="side-nav__item"
+    routerLinkActive="side-nav__item--active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <a routerLink="/" class="side-nav__link">
+      <svg class="side-nav__icon">
+        <use xlink:href="assets/sprite.svg#icon-shop"></use>
+      </svg>
+      <span>Home</span>
+    </a>
+  </li>
+
+  <li class="side-nav__item" routerLinkActive="side-nav__item--active">
+    <a routerLink="/cart" class="side-nav__link">
+      <svg class="side-nav__icon">
+        <use xlink:href="assets/sprite.svg#icon-cart"></use>
+      </svg>
+      <span>Your Cart</span>
+    </a>
+  </li>
+</ul>
+<!-- SECOND CHILD OF SIDE NAVBAR  -->
+<div class="legal">&copy; Trillo, All rights reserved.</div>

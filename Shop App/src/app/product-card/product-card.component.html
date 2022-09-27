@@ -1,0 +1,13 @@
+<div class="product-card">
+  <!-- <img [src]="product.img" [alt]="product.name" /> -->
+  <h3>{{ cardDetails.name }}</h3>
+  <h4>{{ cardDetails.price }}</h4>
+  <h4>{{ cardDetails.madeIn }}</h4>
+  <button
+    [disabled]="!isClickable"
+    class="btn"
+    (click)="handleClickCardButton()"
+  >
+    {{ CTA_text }}
+  </button>
+</div>

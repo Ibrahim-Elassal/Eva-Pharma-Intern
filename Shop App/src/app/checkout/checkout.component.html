@@ -1,0 +1,32 @@
+<div class="container">
+  <!-- We should link our variable to HTML -->
+  <!-- We should Tell our form what to do on submit?? -->
+  <form [formGroup]="checkoutForm" (ngSubmit)="onCheckout()">
+    <input type="text" placeholder="Street Name" formControlName="street" />
+    <span
+      *ngIf="
+        checkoutForm.controls['street'].hasError('required') &&
+        checkoutForm.controls['street'].touched
+      "
+      class="error"
+      >Street is required</span
+    >
+    <select formControlName="countryName">
+      <option value="" disabled>Select Country</option>
+      <option value="eg">Egypt</option>
+      <option value="ru">Russia</option>
+    </select>
+    <span
+      *ngIf="
+        checkoutForm.controls['countryName'].hasError('required') &&
+        checkoutForm.controls['countryName'].touched
+      "
+      class="error"
+      >Country Name is required</span
+    >
+    <button [disabled]="checkoutForm.invalid" class="btn" type="submit">
+      <span class="btn__hidden">Order Now!!</span>
+      <span class="btn__visible">Total Order: {{ totalPrice }} EGP</span>
+    </button>
+  </form>
+</div>

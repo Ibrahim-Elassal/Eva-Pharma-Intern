@@ -1,0 +1,36 @@
+.container {
+  padding: 4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.product-width {
+  width: 30%;
+}
+
+.img-box {
+  width: 40%;
+  margin: auto;
+}
+.img-box img {
+  width: 100%;
+}
+.loader {
+  margin: 0 0 2em;
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+svg path,
+svg rect {
+  fill: var(--color-primary);
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+}

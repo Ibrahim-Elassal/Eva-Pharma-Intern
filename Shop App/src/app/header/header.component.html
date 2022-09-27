@@ -1,0 +1,36 @@
+<header class="header">
+  <!-- FIRST CHILD IN HEADER FLEX BOX -->
+  <img src="assets/logos/logo.png" alt="Trillo logo" class="logo" />
+  <!-- SECOND CHILD IN HEADER FLEX BOX -->
+  <form action="#" class="search">
+    <input
+      name="searchbar"
+      type="text"
+      class="search__input"
+      placeholder="Search Products"
+      [(ngModel)]="searchname"
+    />
+    <button class="search__button" (click)="onSearching()">
+      <svg class="search__icon">
+        <use xlink:href="assets/sprite.svg#icon-magnifying-glass"></use>
+      </svg>
+    </button>
+  </form>
+  <!-- THIRD CHILD IN HEADER FLEX BOX -->
+  <nav class="user-nav">
+    <!-- CHILD OF USER NAVIGATION AND HE IS DOUBLE THE TWO CHILDS-->
+    <div
+      class="user-nav__user"
+      [routerLink]="userID ? '/profile' : '/login'"
+      routerLinkActive="user-nav__user--active"
+    >
+      <img
+        src="assets/Profile.jpg"
+        alt="Profile Photo"
+        class="user-nav__user-photo"
+        *ngIf="userID"
+      />
+      <span class="user-nav__user-name">{{ userID ? "Adham" : "Login" }}</span>
+    </div>
+  </nav>
+</header>

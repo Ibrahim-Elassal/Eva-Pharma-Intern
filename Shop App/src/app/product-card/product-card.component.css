@@ -1,0 +1,18 @@
+.product-card {
+  width: 100%;
+  margin-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  padding: 2rem;
+}
+.product-card h3 {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.product-card h4 {
+  font-size: 1.5rem;
+}
+.product-card button {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+}

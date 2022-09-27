@@ -1,0 +1,131 @@
+<div class="container">
+  <!-- We should link our variable to HTML -->
+  <!-- We should Tell our form what to do on submit?? -->
+  <form [formGroup]="signUpForm" (ngSubmit)="onRegisterNewUser()">
+    <input
+      type="text"
+      placeholder="Please enter your name"
+      formControlName="name"
+    />
+
+    <span
+      *ngIf="
+        signUpForm.controls['name'].hasError('required') &&
+        signUpForm.controls['name'].touched
+      "
+      class="error"
+      >Name is required</span
+    >
+
+    <span
+      *ngIf="
+        (signUpForm.controls['name'].hasError('minlength') ||
+          signUpForm.controls['name'].hasError('maxlength')) &&
+        signUpForm.controls['name'].touched
+      "
+      class="error"
+      >Name should be 4 - 20 charachter</span
+    >
+
+    <input
+      type="email"
+      placeholder="Please enter your email"
+      formControlName="email"
+    />
+
+    <span
+      *ngIf="
+        signUpForm.controls['email'].hasError('required') &&
+        signUpForm.controls['email'].touched
+      "
+      class="error"
+      >Email is required</span
+    >
+
+    <span
+      *ngIf="
+        signUpForm.controls['email'].hasError('email') &&
+        signUpForm.controls['email'].touched
+      "
+      class="error"
+      >Invalid Email</span
+    >
+
+    <input
+      type="number"
+      placeholder="Please enter your age"
+      formControlName="age"
+    />
+
+    <span
+      *ngIf="
+        signUpForm.controls['age'].hasError('required') &&
+        signUpForm.controls['age'].touched
+      "
+      class="error"
+      >Age is required</span
+    >
+
+    <span
+      *ngIf="
+        (signUpForm.controls['age'].hasError('min') ||
+          signUpForm.controls['age'].hasError('max')) &&
+        signUpForm.controls['age'].touched
+      "
+      class="error"
+      >User should be at least 18 - 100 years old</span
+    >
+
+    <input
+      type="password"
+      placeholder="Please enter your password"
+      formControlName="password"
+    />
+
+    <span
+      *ngIf="
+        signUpForm.controls['password'].hasError('required') &&
+        signUpForm.controls['password'].touched
+      "
+      class="error"
+      >Password is required</span
+    >
+
+    <span
+      *ngIf="
+        signUpForm.controls['password'].hasError('pattern') &&
+        signUpForm.controls['password'].touched
+      "
+      class="error"
+    >
+      <ul>
+        <li>at least 8 characters</li>
+        <li>
+          must contain at least 1 uppercase letter,
+        </li>
+        <li>1 lowercase letter</li>
+        <li>and 1 number</li>
+        <li>Can contain special characters</li>
+      </ul>
+    </span>
+
+    <input
+      type="password"
+      placeholder="Please confirm your password"
+      formControlName="confirmPassword"
+    />
+
+    <p style="margin-bottom: 2rem; text-align: center; font-size: 1.5rem">
+      You already have an account?
+      <span
+        routerLink="/login"
+        style="color: var(--color-primary); cursor: pointer"
+        >Login</span
+      >
+    </p>
+
+    <button [disabled]="signUpForm.invalid" class="btn" type="submit">
+      Create User
+    </button>
+  </form>
+</div>
