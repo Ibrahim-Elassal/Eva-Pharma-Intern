@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 30px;
+}
+.intro {
+  height: 100vh;
+  background-image:linear-gradient(
+    120deg,
+    rgb(85 137 212 / 80%) 0%,
+    rgb(148 161 251 / 80%) 100% ),
+   url(assets/img.jpg);
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about {
+  height: 100vh;
+  margin-top: -25vh ;
+  padding-top: 25vh ;
+}
+.childOne
+{
+  color: white ;
+  font-family: sans-serif;
+  font-size: 50px ;
+  letter-spacing: 35px;
+}
+.childTwo {
+  color: white ;
+  font-family: sans-serif;
+  font-size: 25px ;
+  letter-spacing: 10px;
+}
+.intro button {
+  padding: 15px 30px ;
+  border-radius: 5px;
+  border: none ;
+  color: grey;
+  cursor: pointer;
+}

@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Lobster&display=swap");
+
+:root {
+  --main-color: #4cc77d;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Comfortaa", cursive;
+}
+.intro {
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,  #0c1f2c 0%,  #0c1f2c 45%, transparent 75%
+    ),
+    url(assets/img.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+}
+.intro .content {
+  width: 33%;
+  margin-left: 10%;
+}
+.intro .content h2 {
+  font-family: "Lobster", cursive;
+  font-size: 60px;
+  color: var(--main-color);
+}
+.intro .content p {
+  font-size: 19px;
+  color: #fff;
+  font-weight: 300;
+  margin: 25px 0px 40px;
+}
+.intro .content button {
+  padding: 10px 30px;
+  border-radius: 4px;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
