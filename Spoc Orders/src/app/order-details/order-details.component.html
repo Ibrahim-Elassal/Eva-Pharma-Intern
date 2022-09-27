@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Order Details</h2>
+  <div class="left-side col-sm-12 col-md-8 col-lg-5"  >
+    <div>
+      <h3>Pharmacy Name</h3>
+    <h4>{{orderDetails.pharmacyName | titlecase}}</h4>
+    </div>
+    <div>
+      <h3>Order Date</h3>
+    <h4>{{orderDetails.orderDate | date}}</h4>
+    </div>
+    <div>
+      <h3>Agent Name</h3>
+    <h4>{{orderDetails.agentName  | titlecase}}</h4>
+    </div>
+    <div>
+      <h3>Manager Name</h3>
+    <h4>{{orderDetails.managerName | titlecase}}</h4>
+    </div>
+    <div>
+      <h3>Distributor Name</h3>
+    <h4>{{orderDetails.distributorName | titlecase}}</h4>
+    </div>
+    <div>
+      <h3>Branch Name</h3>
+    <h4>{{orderDetails.branchName | titlecase}}</h4>
+    </div> <div>
+      <h3>Pharmacy code at Distributer</h3>
+    <h4>{{orderDetails.pharmacyCode}}</h4>
+    </div>
+    <div>
+      <h3>Expired Good</h3>
+    <h4>{{orderDetails.expiryGoods}}</h4>
+    </div>
+    <div>
+      <h3>Value of Expired Goods</h3>
+    <h4>{{orderDetails.valueOfExpiredGoods | titlecase}}</h4>
+    </div>
+  </div>
+  <div class="right-side col-sm-12 col-md-8 col-lg-5">
+    <h3 class="title">List of Products</h3>
+    <div class="right-content" *ngFor="let item of orderDetails.products">
+        <div class="right-section">
+          <h5 >Product Name</h5>
+          <h6>{{item.name | titlecase }}</h6>
+        </div>
+        <div  class="right-section">
+          <h5>Quantity</h5>
+          <h6>{{item.quantity  }}</h6>
+        </div>
+        <div  class="right-section">
+          <h5>Expiry Date</h5>
+          <h6>{{item.expiryDate | date}}</h6>
+        </div>
+    </div>
+  </div>
+</div>
+

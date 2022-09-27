@@ -1,0 +1,30 @@
+<div class="container d-flex justify-content-center">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+    <div class="input-1">
+      <p class="fw-bold fs-3"> Login</p>
+      <!-- Email -->
+      <label for="exampleInputEmail1">Your Email </label> <br>
+      <input id="exampleInputEmail1" type="email" class="" formControlName="email" placeholder=""> <br>
+      <small class=" error" *ngIf=" loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched"> Email is required </small>
+      <small class=" error" *ngIf=" loginForm.controls['email'].hasError('email') && loginForm.controls['email'].touched"> Invalid Email </small>
+    </div>
+    <!--Password -->
+    <div class="">
+      <label for="exampleInputPassword1">Your Password</label> <br>
+      <input id="exampleInputPassword1" type="password" class=" " formControlName="password" placeholder=""> <br>
+      <small class=" error" *ngIf=" loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched"> Password is required </small>
+      <small class="error" *ngIf=" loginForm.controls['password'].hasError('pattern') && loginForm.controls['password'].touched">
+        <ul>
+          <li>at least 8 characters</li>
+          <li> must contain at least 1 uppercase letter </li>
+          <li>1 lowercase letter</li>
+          <li>1 number</li>
+          <li>Can contain special characters</li>
+        </ul>
+      </small>
+    </div>
+    <div class="d-grid">
+      <button class=" fs-5" [disabled]="!loginForm.valid" type="submit">Login</button>
+    </div>
+  </form>
+</div>

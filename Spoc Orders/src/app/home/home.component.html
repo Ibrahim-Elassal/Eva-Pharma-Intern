@@ -1,0 +1,18 @@
+
+  <div class="container"  *ngIf="orders.length > 0 &&!loading">
+    <div class="row">
+      <div class="product-card" *ngFor="let order of orders " [routerLink]="['/orderdetails', order.id]" >
+        <h4>Pharmacy Name : {{order.pharmacyName  }}</h4>
+        <h4>Order Date : {{order.orderDate | date }}</h4>
+        <h4> Agent Name : {{order.agentName}}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="text-center w-100" *ngIf="loading"> <app-spinner></app-spinner> </div>
+   
+  <div class="container" *ngIf="orders.length === 0 && !loading">
+   <div class="img-box">
+    <img src="assets/SVG/empty.svg"  alt="">
+    <h1>Sorry , No Orders Found</h1>
+   </div> 
+  </div> 

@@ -1,0 +1,10 @@
+<header class="header">
+  <form action="#" class="search">
+    <input name="searchbar" type="text" class="search__input" placeholder="Search Agent Name " [(ngModel)]="searchname" autocomplete="off" />    
+    <button class="search__button" (click)="onSearching()">
+      <svg class="search__icon">    
+        <use xlink:href="assets/sprite.svg#icon-magnifying-glass"></use>
+      </svg>
+    </button>
+  </form>
+</header>

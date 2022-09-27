@@ -1,0 +1,19 @@
+<ul class="side-nav">
+  <li
+    class="side-nav__item"
+    routerLinkActive="side-nav__item--active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <a routerLink="/systemlayout/home" class="side-nav__link">
+      <span>Home</span>
+    </a>
+  </li>
+
+<li class="side-nav__item" routerLinkActive="side-nav__item--active">
+  <a routerLink="/login" class="side-nav__link" (click)="logOut()">
+    <span>Logout</span>
+  </a>
+</li>
+</ul>
+
+<div class="legal">&copy; Orders, All rights reserved.</div>
